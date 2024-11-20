@@ -4,6 +4,7 @@ import { supabase } from "@/supabase/supabaseClient";
 import { useRouter } from "next/navigation";
 import { useState } from "react"
 import { toast } from 'react-toastify';
+import spinner from "../../../public/spinner.gif"
 
 
 
@@ -16,6 +17,7 @@ export default function Home(){
     email:'',
     password:''
   })
+  const [loading,setLoading]=useState<boolean>(false)
   const router=useRouter();
 
   const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
@@ -32,6 +34,7 @@ export default function Home(){
       return
     }
     try {
+      setLoading(true)
       const response=await supabase.auth.signUp({
         email:data.email,
         password:data.password
@@ -45,6 +48,8 @@ export default function Home(){
       toast.error("error doing signup")
       console.log("error doing signup",error);
       
+    }finally{
+      setLoading(false)
     }
 
     
@@ -57,7 +62,7 @@ export default function Home(){
         <input className="input" type="email" name="email" onChange={handleChange} />
         <label className="label" htmlFor="password">password</label>
         <input className="input" type="password" name="password" onChange={handleChange}/>
-          <button className="btn" onClick={handlesubmit}>Signup</button>
+          <button className="btn" onClick={handlesubmit}>{loading && <img style={{height:"20px",width:"20px",display:"flex",alignItems:"center",justifyContent:"center",marginRight:"10px"}} src={spinner.src}/>}Signup</button>
       </div>
     </div>
   </div>

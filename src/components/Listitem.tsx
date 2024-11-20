@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react"
 import { toast } from 'react-toastify';
+import spinner from "../../public/spinner.gif"
 
 export interface formdata{
     title:string;
@@ -16,6 +17,7 @@ export default function Listitem(){
         title:'',
         content:'',
     })
+    const [loading,setLoading]=useState<boolean>(false)
     const [user,setUser]=useState<string>('')
     // const [loading,setLoading]=useState<boolean>(false)
     const router=useRouter();
@@ -40,7 +42,7 @@ export default function Listitem(){
     },[])
     const handleClick=async()=>{
       try {
-        // setLoading(true)
+        setLoading(true)
         const response=await supabase.from('data').insert({
             title:data.title,
             content:data.content,
@@ -58,7 +60,7 @@ export default function Listitem(){
         console.log("error submitting data",error);
         
       }finally{
-        // setLoading(false)
+        setLoading(false)
       }
     console.log(data);
     
@@ -70,7 +72,7 @@ export default function Listitem(){
             <input className="inp-box" type="text" name="title" onChange={handlechange} placeholder="write your title here..."/>
             <label className="label" htmlFor="content">Content</label>
             <input className="inp-box content" type="text" name="content" onChange={handlechange} placeholder="write your note here..." />
-            <button className="btn" onClick={handleClick}>submit</button>
+            <button className="btn" onClick={handleClick}>{loading && <img style={{height:"20px",width:"20px",display:"flex",alignItems:"center",justifyContent:"center",marginRight:"10px"}} src={spinner.src}/>}submit</button>
             <Link style={{width:"100%"}} href="/show"><button className="btn-btm">View Notes</button></Link>
         </div>
         
