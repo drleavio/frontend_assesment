@@ -17,7 +17,7 @@ export default function Listitem(){
         content:'',
     })
     const [user,setUser]=useState<string>('')
-    const [loading,setLoading]=useState<boolean>(false)
+    // const [loading,setLoading]=useState<boolean>(false)
     const router=useRouter();
 
     const handlechange=(e:React.ChangeEvent<HTMLInputElement>)=>{
@@ -40,7 +40,7 @@ export default function Listitem(){
     },[])
     const handleClick=async()=>{
       try {
-        setLoading(true)
+        // setLoading(true)
         const response=await supabase.from('data').insert({
             title:data.title,
             content:data.content,
@@ -58,7 +58,7 @@ export default function Listitem(){
         console.log("error submitting data",error);
         
       }finally{
-        setLoading(false)
+        // setLoading(false)
       }
     console.log(data);
     

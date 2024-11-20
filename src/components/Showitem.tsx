@@ -1,6 +1,6 @@
 "use client"
 import { supabase } from "@/supabase/supabaseClient"
-import { useEffect, useState, version } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -63,7 +63,7 @@ export default function Showitem(){
         setEditingId(null); 
     }
 }
-    const handleEdit = (todo: any) => {
+    const handleEdit = (todo:Note) => {
         setEditingId(todo.id);
         setEditTitle(todo.title);
         setEditContent(todo.content);
