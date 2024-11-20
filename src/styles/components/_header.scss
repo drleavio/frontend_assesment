@@ -8,6 +8,10 @@
         font-weight: 600;
         width: 100%;
         padding-inline: 50px;
+        @media screen and (max-width:768px) {
+            font-size: 15px;
+            font-weight: 500;
+        }
     }
     .buttons{
         display: flex;
@@ -20,6 +24,11 @@
            border: 1px solid rgba(255, 255, 255, 0.1);
            padding: 10px 20px;
            border-radius: 5px; 
+
+           @media screen and (max-width:768px) {
+             font-size: 9px;
+             font-weight: 300;
+           }
           
         }
         .btn:hover{
@@ -28,6 +37,10 @@
         }
         .l-btn{
             cursor: pointer;
+            @media screen and (max-width:768px) {
+                font-size: 9px;
+                font-weight: 300;
+              }
         }
 
     }
