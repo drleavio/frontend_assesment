@@ -38,6 +38,12 @@ export default function Header(){
         <div className="logo">Logo</div>
         <div className="buttons">
             {
+                value && <Link href='/submit'><div className="btn">Add note</div></Link>
+            }
+            {
+                value && <Link href='/show'><div className="btn">Check note</div></Link>
+            }
+            {
                 !value && <Link href="/login"><div className="l-btn">Login</div></Link>
             }
             {

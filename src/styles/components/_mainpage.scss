@@ -1,0 +1,57 @@
+.page-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100vw;
+    .inside-pd{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            .head{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+                font-weight: 700;
+               
+            }
+            .para{
+                font-size: 15px;
+                font-weight: 400;
+            }
+            .mar{
+                margin-bottom: 20px;
+            }
+        }
+        .btn{
+            padding:10px  20px;
+            background-color: rgb(88, 88, 237);
+            border-radius: 6px;
+        }   
+    }
+    .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+
+        .inside-btm{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+         
+        }
+    }
+}
