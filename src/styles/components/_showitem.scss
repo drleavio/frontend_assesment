@@ -1,0 +1,104 @@
+.show-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  flex: 1;
+
+ .m-btn{
+    width: 250px;
+    padding: 20px;
+    @media screen and (max-width:768px) {
+        width: 100%;
+    }
+    .s-btn{
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(255,255,255,0.5);
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+ }
+  
+  .map-data{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width:768px) {
+        width: 100%;
+    }
+    
+    .data{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        @media screen and (max-width:768px) {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .inp{
+            padding: 10px;
+            color: black;
+            border-radius: 8px;
+            @media screen and (max-width:768px) {
+                width: 100%;
+            }
+        }
+        .text{
+            padding: 10px;
+            color: black;
+            border-radius: 8px;
+            height: 100px;
+            @media screen and (max-width:768px) {
+                width: 100%;
+            }
+        }
+        .btn{
+            padding: 10px;
+            background-color: skyblue;
+            border-radius: 8px;
+            @media screen and (max-width:768px) {
+                width: 100%;
+            }
+        }
+        .submit{
+            background-color: rgb(255,255,255,0.5);
+            @media screen and (max-width:768px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .inside-md{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        gap: 10px;
+        background-color: skyblue;
+        border-radius: 8px;
+        
+        .title{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .content{
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .btn{
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        .red{
+            background-color: gray;
+        }
+        .black{
+            background-color: black;
+        }
+    }
+  }
+}
